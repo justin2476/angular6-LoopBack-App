@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<h1>{{customName}}</h1>
+<form (submit)="onSub()">
+  <div>
+    <label for="name">Name: </label><br>
+    <input type="text" [(ngModel)]="name" name="name" placeholder="{{placeHold.name}}">
+  </div>
+  <div>
+    <label for="mobile">Mobile: </label><br>
+    <input type="text" [(ngModel)]="mobile" name="mobile" placeholder="{{placeHold.mobile}}">
+  </div>
+  <div>
+    <label for="gen">Gender: </label><br>    
+    Male:<input type="radio" [(ngModel)]="gen" name="gender" value="MALE"/>
+    Female:<input type="radio" [(ngModel)]="gen" name="gender" value="FEMALE"/>
+  </div>
+  <div>
+     <button type="submit">Enter</button>
+  </div><br>
+  </form>
+
+  <label for="newGen">Select From DB:</label><br>
+  <button (click)='onClick()'>Male</button>
+  <button (click)='onClickFem()'>Female</button>
+
+  <h4>from db</h4>
+   <div *ngFor="let cus of custList">
+    <div *ngIf="cus.gender==newGen">
+    <li>{{cus.name}}</li>
+    <li>{{cus.mobile}}</li>
+    <li>{{cus.gender}}</li>
+    <li>{{cus.createdDate}}</li>
+    <br>
+    <div>
+  </div>
+  
